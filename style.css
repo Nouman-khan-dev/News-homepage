@@ -1,0 +1,294 @@
+:root{
+    --softOrange:hsl(35, 77%, 62%);
+    --sofRed:hsl(5, 85%, 63%);
+    --Off-white:hsl(36, 100%, 99%);
+    --GrayishBlue:hsl(233, 8%, 79%);
+    --Darkgrayishblue:hsl(236, 13%, 42%);
+    --Verydarkblue:hsl(240, 100%, 5%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body{
+    max-width: 1440px;
+    width: 100%;
+    height: 100vh;
+    max-height: 1020px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+li{
+    list-style: none;
+}
+.burger,.close{
+    display: none;
+}
+
+#main{
+    width: 80%;
+    max-height: 1020px;
+}
+
+.navBar{
+    width: 100%;
+    height: 80px;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+.logo{
+    font-size: 58px;
+}
+
+.menu{
+    display: flex;
+    gap: 30px;
+}
+.menu li{
+    color: var(--Darkgrayishblue) ;
+}
+.menu li:hover{
+    color: var(--sofRed);
+    cursor: pointer;
+}
+
+.grid{
+    width: 100%;
+    display: grid;
+    height: calc(96vh - 256px);
+    grid-template-areas: 
+    "a1 a1 a4"
+    "a2 a3 a4"
+    "a5 a6 a7"
+    ;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1.2fr 1fr .5fr ;
+    gap: 25px;
+    grid-auto-flow: row;
+}
+
+.pic{
+    grid-area: a1;
+    width: auto;
+    background:url(assets/images/image-web-3-desktop.jpg) no-repeat center center/cover;
+}
+
+.heading{
+    grid-area: a2;
+    font-size: 24px;
+}
+
+
+.text-box{
+    grid-area: a3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.text-box p{
+    line-height: 150%;
+}
+p{
+    font-size: 15px;
+    color: var(--Darkgrayishblue);
+    line-height: 160%;
+}
+.readBtn{
+ width: 50%;
+ height: 20%;
+ background-color: var(--sofRed);
+ border: none;
+ outline: none;
+ border-radius: 3px;
+ color: var(--GrayishBlue);
+ letter-spacing: 3px;
+ font-size:16px ;
+}
+.readBtn:hover{
+    background: var(--Verydarkblue);
+    cursor: pointer;
+}
+
+aside{
+    grid-area: a4;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--Verydarkblue);
+    color: var(--GrayishBlue);
+    margin-bottom: 25px;
+}
+aside h1{
+    font-size: 33px;
+    color: var(--softOrange);
+    margin-bottom: 8px;
+}
+aside .inaside h5{
+font-size: 19px;
+padding-bottom: 5px;
+}
+.inaside h5:hover{
+    color: var(--softOrange);
+    cursor: pointer;
+}
+.line{
+    width: 100%;
+    height: .8px ;
+    background-color: var(--GrayishBlue);
+}
+
+.box{
+    display: flex;
+    gap: 20px;
+}
+
+.box .image {
+    height: 100%;
+    width: 136px;
+}
+
+.box .content h1{
+    font-size: 28px;
+    color: var(--GrayishBlue);
+    line-height: 150%;
+}
+.box .content h5{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 34px;
+    padding: 3px 0 ;
+}
+.box .content h5:hover{
+    color: var(--sofRed);
+    cursor: pointer;
+}
+
+.box1{
+    grid-area: a5;
+}
+.box1 .image{
+    background:url(assets/images/image-retro-pcs.jpg) no-repeat center center/cover;
+}
+.box2{
+    grid-area: a6;
+}
+.box2 .image{
+    background:url(assets/images/image-top-laptops.jpg) no-repeat center center/cover;
+}
+.box3{
+    grid-area: a7;
+}
+.box3 .image {
+    background:url(assets/images/image-gaming-growth.jpg) no-repeat center center/cover;
+}
+
+@media (max-width:1169px) {
+    /* body{
+        padding: 80px 0;
+    } */
+    #main{
+        /* margin: 80px 0; */
+        height: auto;
+    }
+    .grid{
+        height: calc(86vh - 187px);
+    }
+}
+@media (max-width:1000px) {
+    body{
+        max-height: 100%;
+        height: 100%;
+        padding: 0;
+    }
+    #main{
+        padding-bottom: 100px;
+        width: 75%;
+        max-height: max-content;
+    }
+    /* .menu{
+        display: none;
+    } */
+    .grid{
+        width: 100%;
+        /* height: calc(100vh - 187px); */
+        height: auto;
+        
+        grid-template-areas: 
+        "a1""a2""a3""a4""a5""a6""a7"
+        ;
+        grid-template-columns: auto ;
+        grid-template-rows:max-content;
+        gap: 25px;
+    }
+    aside{
+        gap: 30px;
+    }
+    .pic{
+        width: 100%;
+        height: 300px;
+    }
+
+    .readBtn {
+        margin: 30px 0;
+    padding: 15px 0;
+    height: auto;
+    }
+}
+@media (max-width:800px) {
+    .menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    flex-direction: column;
+    background: var(--Off-white);
+    color: var(--Verydarkblue);
+    transform: translateX(100%);
+    transition: .2s;
+    padding: 30px;
+    padding-top: 47%;
+    z-index: 2;
+    display: none;
+}
+.stop-scrolling {
+    height: 100vh;
+    overflow: hidden;
+  }
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 1;
+}
+.close{
+    width: 30px;
+    position: absolute;
+    top: 26px;
+    right: 15px;
+}
+.burger,.close{
+    display: block;
+}
+
+}
+@media (max-width:670px) {
+    #main{
+        width: 95%;
+        padding-bottom: 50px;
+    }
+}
